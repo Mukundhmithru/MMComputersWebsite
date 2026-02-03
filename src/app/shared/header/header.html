@@ -1,0 +1,27 @@
+<header class="header">
+  <div class="container">
+    <div class="logo">
+      <img src="assets/images/logo.png" alt="logo">
+      <div class="">
+        <h3>Computers</h3>
+        <span>IT Solutions</span>
+      </div>
+      
+      
+    </div>
+
+    <nav class="nav">
+      <a  (click)="scrollTo('home')" [class.active]="activeMenu === 'home'" >Home</a>
+      <a  (click)="scrollTo('about')" [class.active]="activeMenu === 'about'">About Us</a>
+      <a  (click)="scrollTo('services')" [class.active]="activeMenu === 'services'">Services</a>
+      <a  (click)="scrollTo('Contact')" [class.active]="activeMenu === 'Contact'">Contact</a>
+    </nav>
+
+    <!-- <button class="btn-primary">Contact Us</button> -->
+     <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+  </div>
+</header>
