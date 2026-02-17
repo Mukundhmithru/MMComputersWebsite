@@ -1,19 +1,22 @@
 <header class="header">
-  <div class="container">
-    <div class="logo">
+     <div class="logo d-flex align-items-center justify-content-center">
       <img src="assets/images/logo.png" alt="logo">
-      <div class="">
+      <div class="logo-text">
         <h3>Computers</h3>
-        <span>IT Solutions</span>
+        <span>IT Consulting & Digital solution</span>
       </div>
       
       
     </div>
+  <div class="container">
+ 
 
     <nav class="nav">
       <a  (click)="scrollTo('home')" [class.active]="activeMenu === 'home'" >Home</a>
       <a  (click)="scrollTo('about')" [class.active]="activeMenu === 'about'">About Us</a>
       <a  (click)="scrollTo('services')" [class.active]="activeMenu === 'services'">Services</a>
+      <a  (click)="scrollTo('careers')" [class.active]="activeMenu === 'careers'">Careers</a>
+      <a  (click)="scrollTo('Customers')" [class.active]="activeMenu === 'Customers'">Customers</a>
       <a  (click)="scrollTo('Contact')" [class.active]="activeMenu === 'Contact'">Contact</a>
     </nav>
 
