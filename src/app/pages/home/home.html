@@ -1,6 +1,6 @@
 <section class="hero" id="home">
-  <div class="container">
-    <h1>Digital & Online Service Provider</h1>
+  <!-- <div class="container">
+    <h1>IT Consulting & Training </h1>
 
     <p>
       At MM Computers, we specialize in delivering reliable IT solutions
@@ -9,10 +9,64 @@
     </p>
 
     <button class="btn-secondary">Explore Services</button>
+  </div> -->
+  <div id="homeCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+  <!-- Indicators -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2"></button>
   </div>
+
+  <!-- Slides -->
+  <div class="carousel-inner">
+
+    <!-- Slide 1 -->
+    <div class="carousel-item active">
+      <img src="assets/images/home-1.jpg" class="d-block w-100 carousel-img" alt="Slide 1">
+      <div class="carousel-caption">
+        <h1>Digital & Online Service Provider</h1>
+        <p>We deliver reliable IT solutions for your business growth.</p>
+        <button class="btn-secondary">Explore Services</button>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="carousel-item">
+      <img src="assets/images/home-2.jpg" class="d-block w-100 carousel-img" alt="Slide 2">
+      <div class="carousel-caption">
+        <h1>IT Consulting & Digital solution</h1>
+        <p>Professional consulting and technology solutions.</p>
+        <button class="btn-secondary">Contact Us</button>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="carousel-item">
+      <img src="assets/images/home-3.jpg" class="d-block w-100 carousel-img" alt="Slide 3">
+      <div class="carousel-caption">
+        <h1>Software & Support</h1>
+        <p>Complete software development and support services.</p>
+        <button class="btn-secondary">Learn More</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+
+  <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+
+</div>
 </section>
 
-<section class="gallery">
+<!-- <section class="gallery">
   <div class="container">
     <div class="image-grid">
       <img src="assets/images/serv.2.jpg" alt="Service 2" />
@@ -20,7 +74,7 @@
       <img src="assets/images/serv.3.jpg" alt="Service 3" />
     </div>
   </div>
-</section>
+</section> -->
 
 <section class="about-section" id="about">
   <div class="about-container">
@@ -51,70 +105,140 @@
 
     <h2 class="section-title">Our Services</h2>
 
-    <div class="services-grid">
+    <div class="card-container">
 
       <!-- Service 1 -->
-      <div class="service-card">
+      <!-- <div class="service-card">
         <h3>Web Development</h3>
         <p>
           We design and develop modern, responsive websites tailored to your
           business needs, helping you establish a strong online presence.
         </p>
+      </div> -->
+      <div class="service-card">
+      <img src="assets/images/service.jpg" alt="Web Development">
+      <div class="overlay">
+        <h3>Web Development</h3>
+        <p>We design modern responsive websites tailored to your business.</p>
       </div>
+    </div>
 
       <!-- Service 2 -->
-      <div class="service-card">
+      <!-- <div class="service-card">
         <h3>Digital Marketing</h3>
         <p>
           Our digital marketing services help your business reach the right
           audience through SEO, social media promotion, and online campaigns.
         </p>
+      </div> -->
+        <div class="service-card">
+      <img src="assets/images/service.jpg" alt="Digital Marketing">
+      <div class="overlay">
+        <h3>Digital Marketing</h3>
+        <p>SEO, social media and online campaigns to grow your brand.</p>
       </div>
-
+    </div>
       <!-- Service 3 -->
-      <div class="service-card">
+      <!-- <div class="service-card">
         <h3>IT Enabled Services</h3>
         <p>
           We provide reliable IT-enabled services to support businesses and
           individuals with efficient digital solutions.
         </p>
+      </div> -->
+        <div class="service-card">
+      <img src="assets/images/service.jpg" alt="IT Enabled Services">
+      <div class="overlay">
+        <h3>IT Enabled Services</h3>
+        <p>Reliable digital solutions for businesses and individuals.</p>
       </div>
-
+    </div>
       <!-- Service 4 -->
-      <div class="service-card">
+      <!-- <div class="service-card">
         <h3>Government ID Services</h3>
         <p>
           PAN Card, Aadhaar, Passport, Voter ID, and Ration Card services with
           complete guidance and documentation support.
         </p>
+      </div> -->
+       <div class="service-card">
+      <img src="assets/images/service.jpg" alt="Government ID Services">
+      <div class="overlay">
+        <h3>Government ID Services</h3>
+        <p>We design modern responsive websites tailored to your business.</p>
       </div>
-
+    </div>
       <!-- Service 5 -->
-      <div class="service-card">
+      <!-- <div class="service-card">
         <h3>Online & Documentation Services</h3>
         <p>
           Online Patta / Chitta, document preparation, application filing,
           corrections, and verification services made simple.
         </p>
+      </div> -->
+       <div class="service-card">
+      <img src="assets/images/service.jpg" alt="Online & Documentation Services">
+      <div class="overlay">
+        <h3>Online & Documentation Services</h3>
+        <p>We design modern responsive websites tailored to your business.</p>
       </div>
-
+    </div>
       <!-- Service 6 -->
-      <div class="service-card">
+      <!-- <div class="service-card">
         <h3>CSC & E-Sevai Services</h3>
         <p>
           We provide CSC, E-Sevai, FSSAI registration, and all types of State and
           Central Government services & certificates.
         </p>
+      </div> -->
+      <div class="service-card">
+      <img src="assets/images/service.jpg" alt="CSC & E-Sevai Services">
+      <div class="overlay">
+        <h3>CSC & E-Sevai Services</h3>
+        <p>We design modern responsive websites tailored to your business.</p>
       </div>
+    </div>
+    <!-- </div> -->
 
+<!-- <section class="services-section">
+  <h2 class="section-title">Our Services</h2>
+
+  <div class="card-container">
+
+    <div class="service-card">
+      <img src="assets/images/web.jpg" alt="Web Development">
+      <div class="overlay">
+        <h3>Web Development</h3>
+        <p>We design modern responsive websites tailored to your business.</p>
+      </div>
     </div>
 
-    <div class="cta">
-      <button class="btn-primary">Get In Touch</button>
+    <div class="service-card">
+      <img src="assets/images/digital.jpg" alt="Digital Marketing">
+      <div class="overlay">
+        <h3>Digital Marketing</h3>
+        <p>SEO, social media and online campaigns to grow your brand.</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <img src="assets/images/it-service.jpg" alt="IT Services">
+      <div class="overlay">
+        <h3>IT Enabled Services</h3>
+        <p>Reliable digital solutions for businesses and individuals.</p>
+      </div>
     </div>
 
   </div>
-</section>
+</section> -->
+
+
+   </div>
+      <div class="cta">
+      <button class="btn-primary">Get In Touch</button>
+    </div>
+  </div>
+ </section>
 
 <section class="contact" id="Contact">
   <div class="cont-container">
