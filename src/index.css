@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: #0f172a; /* dark blue background */
+    color: #e2e8f0; /* light text */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      sans-serif;
+  }
+}
+
+@layer utilities {
+  .mm-container {
+    margin: 0;
+    width: 100%;
+    padding: 0;
+  }
+
+  .mm-section {
+    padding: 64px 0;
+    width: 100%;
+  }
+
+  .mm-card {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 24px;
+  }
+
+  .mm-text-secondary {
+    color: #94a3b8;
+  }
+
+  .mm-btn-primary {
+    background-color: #1d4ed8;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+
+  .mm-btn-primary:hover {
+    background-color: #1e40af;
+  }
+
+  .mm-btn-outline {
+    background-color: transparent;
+    color: #1d4ed8;
+    border: 2px solid #1d4ed8;
+    padding: 10px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+  }
+
+  .mm-btn-outline:hover {
+    background-color: #1d4ed8;
+    color: white;
+  }
+
+  @media (min-width: 768px) {
+    .mm-grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .mm-grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .header-top {
+      display: flex !important;
+    }
+    .header-divider {
+      display: block !important;
+    }
+    .header-nav {
+      display: flex !important;
+    }
+    .header-actions {
+      display: flex !important;
+    }
+    .header-mobile-btn {
+      display: none !important;
+    }
+    .header-subtitle {
+      display: inline !important;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .header-subtitle {
+      display: inline !important;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .mobile-drawer {
+      width: 100% !important;
+    }
+  }
+
+  @media (min-width: 640px) {
+    .mobile-drawer {
+      width: 280px !important;
+    }
+  }
+}

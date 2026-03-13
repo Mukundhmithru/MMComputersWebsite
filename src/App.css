@@ -1,0 +1,14 @@
+/* App-level overrides shared with Tailwind + MUI */
+
+.mm-hero-gradient {
+  background: radial-gradient(circle at top left, #e0f2fe, #f9fbff);
+}
+
+.mm-card-blur {
+  backdrop-filter: blur(18px);
+}
+
+.mm-container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
