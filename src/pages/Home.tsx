@@ -1,42 +1,52 @@
 import { useState, useEffect } from 'react'
 import { About } from './About'
 import { Services } from './Services'
-import { Careers } from './Careers'
+import { Policy } from './Policy'
 import { Contact } from './Contact'
-import hero from '../assets/hero.png'
-import documentation from '../assets/home-assests/documentation.png'
-import eservice from '../assets/home-assests/eservice.jpg'
-import itImage from '../assets/home-assests/IT.png'
-import software from '../assets/home-assests/software.jpg'
+import documentation from '../assets/home-assests/document_service.png'
+import eservice from '../assets/home-assests/e_service.png'
+import idImage from '../assets/home-assests/ID_service.png'
+import printout from '../assets/home-assests/printout_service.png'
 
 const coreServices = [
   {
-    title: 'Laptop & Desktop Repairs',
-    body: 'Screen replacements, performance tuning, OS cleanup and data backup with clear timelines and upfront pricing.',
-    image: hero
+    title: 'All Government ID Services (அனைத்து அரசு அடையாள அட்டை சேவைகள்)',
+    body: 'We help you apply, update, and correct government ID documents such as Aadhaar, PAN, Voter ID, and other official records quickly and safely.',
+    image: idImage
   },
   {
-    title: 'Custom PC Builds',
-    body: 'From high-performance workstations to gaming rigs, we assemble and configure systems tailored to your workload.',
+    title: 'Online & Documentation Services (ஆன்லைன் மற்றும் ஆவண சேவைகள்)',
+    body: 'We assist with online form filling, document preparation, application submissions, and other digital services for education, jobs, and government portals.',
     image: documentation
   },
   {
-    title: 'Home & Office Networking',
-    body: 'Wi‑Fi planning, router setup, cabling and secure configurations that keep your devices connected and protected.',
+    title: 'CSC & E-Sevai Services (CSC மற்றும் இ-சேவை சேவைகள்)',
+    body: 'Access various Tamil Nadu government services through E-Sevai including certificates, registrations, and official applications in one place.',
     image: eservice
   },
   {
-    title: 'IT Support & Maintenance',
-    body: 'Ongoing technical support, system updates, security monitoring, and preventive maintenance for your business.',
-    image: itImage
-  },
-  {
-    title: 'Software Installation & Training',
-    body: 'Professional software setup, configuration, user training, and troubleshooting for all your digital needs.',
-    image: software
-  },
+    title: 'Xerox & Printouts (ஜெராக்ஸ் மற்றும் பிரிண்ட் அவுட்)',
+    body: 'Fast and clear photocopying, color and black-and-white printouts, document scanning, and basic printing services for all your needs.',
+    image: printout
+  }
 ]
 
+const handleCallClick = () => {
+  const ua = typeof navigator !== 'undefined' ? navigator.userAgent : ''
+  const isTouchDevice =
+    typeof window !== 'undefined' &&
+    ('ontouchstart' in window || navigator.maxTouchPoints > 0)
+  const isMobileUa =
+    /android|iphone|ipad|ipod|iemobile|mobile/i.test(ua || '')
+
+  if (isTouchDevice || isMobileUa) {
+    window.location.href = 'tel:+918807329654'
+  }
+}
+const handleWhatsappClick = () => {
+  const whatsappUrl = 'https://wa.me/8807329654'
+  window.open(whatsappUrl, '_blank')
+}
 export function Home() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [touchStart, setTouchStart] = useState<number | null>(null)
@@ -149,13 +159,13 @@ export function Home() {
                 }}
               >
                 <div
+                  className="mm-desktop-only-badge"
                   style={{
-                    marginBottom: '24px',
+                    marginBottom: '25px',
                     backgroundColor: 'rgba(255, 255, 255, 0.1)',
                     border: '1px solid rgba(255, 255, 255, 0.3)',
                     borderRadius: '4px',
                     padding: '8px 16px',
-                    display: 'inline-block',
                     fontSize: '0.875rem',
                     color: 'white',
                   }}
@@ -164,8 +174,8 @@ export function Home() {
                 </div>
                 <h1
                   style={{
-                    marginBottom: '24px',
-                    fontSize: '2.5rem',
+                    marginBottom: '14px',
+                    fontSize: '1.5rem',
                     fontWeight: 700,
                     textShadow: '2px 2px 4px rgba(0,0,0,0.5)',
                     lineHeight: 1.3,
@@ -175,8 +185,8 @@ export function Home() {
                 </h1>
                 <p
                   style={{
-                    marginBottom: '32px',
-                    fontSize: '1.2rem',
+                    marginBottom: '12px',
+                    fontSize: '1.0rem',
                     textShadow: '1px 1px 2px rgba(0,0,0,0.5)',
                     lineHeight: 1.4,
                   }}
@@ -190,20 +200,34 @@ export function Home() {
                   flexWrap: 'wrap',
                   alignItems: 'center'
                 }}>
+                          <button
+                    className="mm-btn-primary"
+                    onClick={handleCallClick}
+                    style={{ minWidth: '160px', fontSize: '0.875rem' }}
+                  >
+                    📞 Call Us
+                  </button>
+                  <button
+                    className="mm-btn-primary"
+                    onClick={handleWhatsappClick}
+                    style={{ minWidth: '160px', fontSize: '0.875rem' }}
+                  >
+                    💬 WhatsApp Us
+                  </button>
                   <button
                     className="mm-btn-primary"
                     onClick={() => scrollToSection('contact')}
                     style={{ minWidth: '160px', fontSize: '0.875rem' }}
                   >
-                    Book a Service
+                    📞 Request a Callback
                   </button>
-                  <button
-                    className="mm-btn-outline"
+                  {/* <button
+                    className="mm-btn-primary"
                     onClick={() => scrollToSection('services')}
                     style={{ minWidth: '160px', fontSize: '0.875rem' }}
                   >
                     View All Services
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>
@@ -308,7 +332,7 @@ export function Home() {
       <Services />
 
       {/* Careers/Testimonials Section */}
-      <Careers />
+      <Policy />
 
       {/* Contact Section */}
       <Contact />

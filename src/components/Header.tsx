@@ -1,10 +1,10 @@
 import { useState } from 'react'
-
+import mmLogo from '../assets/mm_logo.jpg'
 const navItems = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
   { label: 'Services', href: '#services' },
-  { label: 'Careers', href: '#careers' },
+  { label: 'Policy', href: '#Policy' },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -15,7 +15,7 @@ export function Header() {
     const sectionId = href.replace('#', '')
     const element = document.getElementById(sectionId)
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' })
     }
     setMobileOpen(false)
   }
@@ -24,12 +24,12 @@ export function Header() {
 
   const handleEmailClick = () => {
     const gmailUrl =
-      'https://mail.google.com/mail/?view=cm&fs=1&tf=1&cc=sample@gmail.com'
+      'https://mail.google.com/mail/?view=cm&fs=1&tf=1&cc=mmcomputers.nmm@gmail.com'
     window.open(gmailUrl, '_blank')
   }
 
   const handleWhatsappClick = () => {
-    const whatsappUrl = 'https://wa.me/8451295648'
+    const whatsappUrl = 'https://wa.me/8807329654'
     window.open(whatsappUrl, '_blank')
   }
 
@@ -42,7 +42,7 @@ export function Header() {
       /android|iphone|ipad|ipod|iemobile|mobile/i.test(ua || '')
 
     if (isTouchDevice || isMobileUa) {
-      window.location.href = 'tel:+918451295648'
+      window.location.href = 'tel:+918807329654'
     }
   }
 
@@ -57,17 +57,17 @@ export function Header() {
           </div>
           <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
             <span style={{ fontSize: '16px' }}>🕒</span>
-            <span>M-F: 8:00am - 9:00pm</span>
+            <span>Mon - Sat, 9:00 AM - 8:00 PM</span>
           </div>
-          <div style={{ display: 'flex', gap: '6px', alignItems: 'center', cursor: 'pointer' }} onClick={handleWhatsappClick}>
+          <div style={{ display: 'flex', gap: '6px', alignItems: 'center', cursor: 'pointer',right:'20px',position:'fixed' }} onClick={handleWhatsappClick}>
             <span style={{ fontSize: '16px', color: '#22c55e' }}>📱</span>
             <span>Click To WhatsApp</span>
           </div>
         </div>
-        <div style={{ display: 'flex', gap: '12px', alignItems: 'center', cursor: 'pointer' }} onClick={handleCallClick}>
+        {/* <div style={{ display: 'flex', gap: '12px', alignItems: 'center', cursor: 'pointer' }} onClick={handleCallClick}>
           <span>Call Us Today</span>
-          <span style={{ fontWeight: 600 }}>+91-8451295648</span>
-        </div>
+          <span style={{ fontWeight: 600 }}>+91-8807329654</span>
+        </div> */}
       </div>
 
       <div className="header-divider" style={{ borderBottom: '1px solid rgba(31,41,55,0.9)', display: 'none' }}></div>
@@ -88,10 +88,16 @@ export function Header() {
               margin: 0
             }}
           >
-            MM Computers
+            <img
+              src={mmLogo}
+              alt="MM Computers"
+              width={70}
+              height={70}
+              style={{ display: 'block' }}
+            />
           </h1>
-          <span className="header-subtitle" style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.875rem', display: 'none' }}>
-            IT & Laptop Service Experts
+          <span className="header-subtitle" style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.875rem' }}>
+          IT Consulting & Digital solution
           </span>
         </div>
 
@@ -147,7 +153,7 @@ export function Header() {
             <span style={{ fontSize: '18px', color: '#1d4ed8' }}>📞</span>
             <div>
               <div style={{ fontSize: '10px', color: 'rgba(148,163,184,0.9)' }}>Call Us Today</div>
-              <div style={{ fontSize: '14px', color: 'white', fontWeight: 600 }}>(303) 780-7387</div>
+              <div style={{ fontSize: '14px', color: 'white', fontWeight: 600 }}>+91-8807329654</div>
             </div>
           </div>
         </div>
@@ -187,7 +193,7 @@ export function Header() {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
             <div>
               <h2 style={{ fontSize: '1.125rem', fontWeight: 600, color: 'white', margin: 0 }}>MM Computers</h2>
-              <p style={{ fontSize: '0.75rem', color: '#94a3b8', margin: 0 }}>IT & Laptop Service Experts</p>
+              <p style={{ fontSize: '0.75rem', color: '#94a3b8', margin: 0 }}>IT Consulting & Digital solution</p>
             </div>
             <button onClick={toggleMobile} style={{ background: 'none', border: 'none', color: 'white', fontSize: '20px', cursor: 'pointer' }}>
               ✕
@@ -202,7 +208,7 @@ export function Header() {
               </div>
               <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
                 <span>🕒</span>
-                <span style={{ color: 'white', fontSize: '14px' }}>M-F: 8:00am - 9:00pm</span>
+                <span style={{ color: 'white', fontSize: '14px' }}>Mon - Sat, 9:00 AM - 8:00 PM</span>
               </div>
               <div style={{ display: 'flex', gap: '6px', alignItems: 'center', cursor: 'pointer' }} onClick={handleWhatsappClick}>
                 <span style={{ color: '#22c55e' }}>📱</span>
@@ -239,21 +245,29 @@ export function Header() {
             </ul>
           </nav>
           <div style={{ borderBottom: '1px solid #334155', margin: '16px 0' }}></div>
-          <button
+
+          <div
             style={{
-              width: '100%',
-              padding: '12px',
-              backgroundColor: '#1d4ed8',
-              color: 'white',
-              border: 'none',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              padding: '6px 12px',
+              backgroundColor: '#0f172a',
+              border: '1px solid rgba(148,163,184,0.6)',
               borderRadius: '4px',
               cursor: 'pointer',
-              fontSize: '16px'
+              transition: 'border-color 0.3s'
             }}
-            onClick={() => scrollToSection('#contact')}
+            onClick={handleCallClick}
+            onMouseEnter={(e) => e.currentTarget.style.borderColor = 'rgba(96,165,250,0.9)'}
+            onMouseLeave={(e) => e.currentTarget.style.borderColor = 'rgba(148,163,184,0.6)'}
           >
-            Get Free Quote
-          </button>
+            <span style={{ fontSize: '18px', color: '#1d4ed8' }}>📞</span>
+            <div>
+              <div style={{ fontSize: '10px', color: 'rgba(148,163,184,0.9)' }}>Call Us Today</div>
+              <div style={{ fontSize: '14px', color: 'white', fontWeight: 600 }}>+91-8807329654</div>
+            </div>
+          </div>
         </div>
       )}
     </header>
