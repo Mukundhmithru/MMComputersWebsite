@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-@layer base {
   * {
     box-sizing: border-box;
   }
@@ -15,15 +14,15 @@
     height: 100%;
   }
 
-  body {
-    margin: 0;
-    background-color: #0f172a; /* dark blue background */
-    color: #e2e8f0; /* light text */
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-      sans-serif;
-  }
-}
 
+body {
+  margin: 0;
+  background-color: #020617 !important;
+  /* background: linear-gradient(135deg, #020617, #0f172a, #1e293b); */
+  color: #e2e8f0; /* light text */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif !important;
+}
 @layer utilities {
   .mm-container {
     margin: 0;
@@ -37,7 +36,8 @@
   }
 
   .mm-card {
-    background-color: #1e293b;
+    /* background-color: #1e293b; */
+
     border: 1px solid #334155;
     border-radius: 12px;
     padding: 24px;
@@ -119,6 +119,10 @@
     .mm-section {
       padding: 30px 10px;
     }
+
+    .slidebutton {
+      visibility: hidden;
+    }
   }
 
   @media (min-width: 640px) {
@@ -143,11 +147,123 @@
   text-align: justify;
 }
 
+
 .sylish-header {
   letter-spacing: 0.1em;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 3px;
-  -webkit-text-stroke-color: white;
   text-shadow: 4px 2px #5d71ff, 6px 4px #5b5b5b;
   text-align: center;
+  animation: lights 5s 750ms linear infinite;
+}
+
+@keyframes lights {
+  0% {
+    color: hsl(230, 40%, 80%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.2),
+      0 0 0.125em hsla(320, 100%, 60%, 0.3),
+      -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+      1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+  }
+  
+  30% { 
+    color: hsl(230, 80%, 90%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 60%, 0.5),
+      -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+      0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+  }
+  
+  40% { 
+    color: hsl(230, 100%, 95%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 90%, 0.5),
+      -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
+      0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
+  }
+  
+  70% {
+    color: hsl(230, 80%, 90%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 60%, 0.5),
+      0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+      -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+  }
+  
+  100% {
+    color: hsl(230, 40%, 80%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.2),
+      0 0 0.125em hsla(320, 100%, 60%, 0.3),
+      1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+      -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+  }
+  
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.15);
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+.MuiBox-root{
+  background-color: linear-gradient(135deg, #020617, #0f172a, #1e293b) !important;
+}
+
+
+.request-btn {
+  position: relative;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #6366f1, #22c55e);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  letter-spacing: 0.05em;
+}
+
+/* glow */
+.request-btn::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  background: linear-gradient(45deg,#6366f1,#22c55e,#06b6d4,#6366f1);
+  z-index: -1;
+  filter: blur(10px);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+/* hover animation */
+.request-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(99,102,241,0.5);
+}
+
+.request-btn:hover::before {
+  opacity: 1;
+}
+
+/* click effect */
+.request-btn:active {
+  transform: scale(0.96);
 }
