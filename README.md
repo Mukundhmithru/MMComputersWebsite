@@ -1,73 +1,131 @@
-# React + TypeScript + Vite
+# MM Computers Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Official website for **MM Computers** built using **React, TypeScript, Vite, TailwindCSS, and Material UI**.
+The site showcases the services offered by MM Computers such as E-Sevai services, documentation services, printing, accounts-related services, and more.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
 
-## React Compiler
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS
+- Material UI (MUI)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Make sure the following are installed on your system:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Node.js** (recommended version: 18 or above)
+- **npm**
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Check versions:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+node -v
+npm -v
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Install Dependencies
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Clone the repository and install the required packages.
+
+```bash
+git clone <your-repository-url>
+cd MMComputersWebsite
+npm install
 ```
+
+---
+
+## Run Project in Development Mode
+
+Start the local development server:
+
+```bash
+npm run dev
+```
+
+After running the command, open your browser and go to:
+
+```
+http://localhost:5173
+```
+
+The website will automatically reload when you make code changes.
+
+---
+
+## Build for Production
+
+Create an optimized production build:
+
+```bash
+npm run build
+```
+
+The build files will be generated inside the **dist** folder.
+
+---
+
+## Preview Production Build
+
+To preview the production build locally:
+
+```bash
+npm run preview
+```
+
+---
+
+## Lint the Code
+
+Run ESLint to check for code issues:
+
+```bash
+npm run lint
+```
+
+---
+
+## Project Structure
+
+```
+mm-computers
+│
+├── public
+├── src
+│   ├── assets
+│   ├── components
+│   ├── pages
+│   ├── App.tsx
+│   └── main.tsx
+│
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+└── README.md
+```
+
+---
+
+## Features
+
+- Responsive design (Mobile + Desktop)
+- Service carousel for multiple service categories
+- Tailwind based styling
+- Material UI icons
+- Fast build with Vite
+- TypeScript support
+
+---
+
+## License
+
+This project is private and maintained for **MM Computers**.
+s
