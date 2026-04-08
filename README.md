@@ -1,17 +1,17 @@
 # MM Computers Website
 
-Official website for **MM Computers** built using **React, TypeScript, Vite, TailwindCSS, and Material UI**.
-The site showcases the services offered by MM Computers such as E-Sevai services, documentation services, printing, accounts-related services, and more.
+Official website for **MM Computers** built using **React, Vite, CSS, and EmailJS**.  
+The site showcases MM Computers services such as e-government support, web and mobile development, digital marketing, data analytics, networking, and more.
 
 ---
 
 ## Tech Stack
 
 - React 19
-- TypeScript
 - Vite
-- Tailwind CSS
-- Material UI (MUI)
+- Bootstrap Icons
+- Font Awesome
+- EmailJS
 
 ---
 
@@ -37,7 +37,7 @@ Clone the repository and install the required packages.
 
 ```bash
 git clone <your-repository-url>
-cd MMComputersWebsite
+cd sparlex-react-package
 npm install
 ```
 
@@ -53,7 +53,7 @@ npm run dev
 
 After running the command, open your browser and go to:
 
-```
+```text
 http://localhost:5173
 ```
 
@@ -83,32 +83,23 @@ npm run preview
 
 ---
 
-## Lint the Code
-
-Run ESLint to check for code issues:
-
-```bash
-npm run lint
-```
-
----
-
 ## Project Structure
 
-```
-mm-computers
+```text
+sparlex-react-package
 │
 ├── public
+│   └── img
 ├── src
-│   ├── assets
 │   ├── components
-│   ├── pages
-│   ├── App.tsx
-│   └── main.tsx
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── styles.css
 │
+├── .env.example
+├── index.html
 ├── package.json
-├── tsconfig.json
-├── vite.config.ts
+├── vite.config.js
 └── README.md
 ```
 
@@ -116,12 +107,14 @@ mm-computers
 
 ## Features
 
-- Responsive design (Mobile + Desktop)
-- Service carousel for multiple service categories
-- Tailwind based styling
-- Material UI icons
-- Fast build with Vite
-- TypeScript support
+- Responsive design for desktop, tablet, and mobile
+- Sticky header with light and dark mode
+- Mobile slide-down navigation drawer
+- Services carousel
+- Reviews marquee section
+- Contact form with EmailJS integration
+- WhatsApp, call, email, and map quick actions
+- Fast build and local development with Vite
 
 ---
 
