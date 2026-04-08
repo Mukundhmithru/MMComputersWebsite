@@ -37,7 +37,7 @@ Clone the repository and install the required packages.
 
 ```bash
 git clone <your-repository-url>
-cd sparlex-react-package
+cd mm-computers-package
 npm install
 ```
 
@@ -86,7 +86,7 @@ npm run preview
 ## Project Structure
 
 ```text
-sparlex-react-package
+mm-computers-package
 │
 ├── public
 │   └── img

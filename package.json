@@ -1,12 +1,15 @@
 {
-  "name": "sparlex-react",
+  "name": "mm-computers",
+  "homepage": "https://kamathavan.github.io/MMComputersWebsite",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -15,6 +18,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.4.1",
+    "gh-pages": "^6.3.0",
     "vite": "^6.3.5"
   }
 }
