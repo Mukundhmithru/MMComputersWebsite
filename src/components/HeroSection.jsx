@@ -20,8 +20,8 @@ const HeroSection = ({ scrollToSection }) => {
           <div className="col-lg-6">
             <div className="eyebrow">IT Consulting & Digital Solution</div>
             <h1 className="hero-title">
-              Delivering complete IT solutions to empower businesses in the
-              digital era.
+              Delivering <span className="hero-title-highlight">AI-Driven</span> IT solutions to
+              empower businesses in the digital era.
             </h1>
             <p className="hero-text">
               We provide a wide range of services including web and mobile

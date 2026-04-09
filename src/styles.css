@@ -1,8 +1,26 @@
+@font-face {
+  font-family: "Farenheight Personal Use";
+  src: url("/OxenCrossbow-nM2g.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Oxen Crossbow";
+  src: url("/OxenCrossbow-nM2g.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 :root {
   --accent: #2563eb;
   --accent-soft: #60a5fa;
   --accent-deep: #1d4ed8;
   --brand-font: Optima, Candara, "Noto Serif Display", "Times New Roman", serif;
+  --brand-display-font: "Farenheight Personal Use", sans-serif;
+  --footer-brand-font: "Oxen Crossbow", serif;
   --ink: #0f172a;
   --muted: #475569;
   --paper: #ffffff;
@@ -161,14 +179,16 @@ button {
 }
 
 .top-brand strong {
-  font-family: "Poppins", sans-serif;
-  font-size: 2.08rem;
-  font-weight: 900;
-letter-spacing: 4px;
-    color: #5170c7;
-    -webkit-text-stroke: 1px #ffffff;
-   
-    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2));
+  font-family: var(--brand-display-font);
+  font-size: 2.05rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: #0f172a;
+  text-transform: uppercase;
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.92),
+    0 2px 10px rgba(15, 23, 42, 0.08);
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.08));
 }
 
 .brand-logo {
@@ -192,13 +212,11 @@ letter-spacing: 4px;
 }
 
 :root[data-theme="dark"] .top-brand strong {
-  color: #cfe4ff;
-  -webkit-text-stroke: 1px #0b1220;
+  color: #f8fbff;
   text-shadow:
-    0 2px 0 #1d4ed8,
-    0 4px 0 #1e3a8a,
-    0 6px 0 rgba(0, 0, 0, 0.28);
-  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.35));
+    0 1px 0 rgba(96, 165, 250, 0.22),
+    0 2px 14px rgba(96, 165, 250, 0.14);
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.28));
 }
 
 .mobile-brand {
@@ -354,6 +372,12 @@ letter-spacing: 4px;
   font-size: clamp(2.5rem, 5vw, 4.75rem);
   line-height: 1.05;
   margin-bottom: 1.25rem;
+}
+
+.hero-title-highlight {
+  display: inline-block;
+  color: var(--accent-deep);
+  padding: 0.04em 0.28em 0.1em;
 }
 
 .hero-text {
@@ -660,14 +684,7 @@ letter-spacing: 4px;
   align-items: stretch;
   gap: 1.25rem;
   width: max-content;
-}
-
-.review-track-a {
-  animation: review-scroll 40s linear infinite;
-}
-
-.review-marquee:hover .review-track-a {
-  animation-play-state: paused;
+  will-change: transform;
 }
 
 .review-card {
@@ -862,9 +879,9 @@ letter-spacing: 4px;
   padding: 0;
   background: transparent;
   color: var(--ink);
-  font-family: var(--brand-font);
-  font-size: 1.3rem;
-  font-weight: 800;
+  font-family: var(--footer-brand-font);
+  font-size: 1.55rem;
+  font-weight: 400;
   letter-spacing: 0.08em;
   text-align: left;
   text-shadow:
@@ -923,6 +940,27 @@ letter-spacing: 4px;
 
 .footer-contact-link i {
   color: var(--accent-deep);
+}
+
+.footer-phone-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.footer-phone-row i {
+  color: var(--accent-deep);
+}
+
+.footer-phone-link {
+  gap: 0;
+}
+
+.footer-phone-separator {
+  color: var(--muted);
 }
 
 :root[data-theme="dark"] .footer-links-block h4,
@@ -1108,6 +1146,33 @@ letter-spacing: 4px;
   color: var(--ink);
 }
 
+.contact-form-grid input::placeholder,
+.contact-form-grid textarea::placeholder {
+  color: #64748b;
+  opacity: 1;
+}
+
+:root[data-theme="dark"] .contact-form-grid input,
+:root[data-theme="dark"] .contact-form-grid textarea {
+  background: #f8fbff;
+  color: #0f172a;
+}
+
+:root[data-theme="dark"] .contact-form-grid input::placeholder,
+:root[data-theme="dark"] .contact-form-grid textarea::placeholder {
+  color: #64748b;
+}
+
+:root[data-theme="dark"] .contact-form-grid input:-webkit-autofill,
+:root[data-theme="dark"] .contact-form-grid input:-webkit-autofill:hover,
+:root[data-theme="dark"] .contact-form-grid input:-webkit-autofill:focus,
+:root[data-theme="dark"] .contact-form-grid textarea:-webkit-autofill,
+:root[data-theme="dark"] .contact-form-grid textarea:-webkit-autofill:hover,
+:root[data-theme="dark"] .contact-form-grid textarea:-webkit-autofill:focus {
+  -webkit-text-fill-color: #0f172a;
+  -webkit-box-shadow: 0 0 0 1000px #f8fbff inset;
+}
+
 .contact-form-grid input[aria-invalid="true"] {
   border-color: rgba(239, 68, 68, 0.7);
   box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.08);
@@ -1188,15 +1253,6 @@ letter-spacing: 4px;
 .back-to-top-react.show {
   opacity: 1;
   visibility: visible;
-}
-
-@keyframes review-scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(calc(-50% - 0.625rem));
-  }
 }
 
 @media (max-width: 1199.98px) {
@@ -1444,7 +1500,7 @@ letter-spacing: 4px;
   }
 
   .mobile-brand strong {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     letter-spacing: 0.08em;
   }
 
@@ -1624,8 +1680,26 @@ letter-spacing: 4px;
 }
 
 @media (max-width: 767.98px) {
-  .review-track-a {
-    animation-duration: 90s;
+  body,
+  p,
+  span,
+  a,
+  button,
+  li,
+  input,
+  textarea,
+  label,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.4;
+  }
+
+  .section-shell {
+    padding: 3.1rem 0;
   }
 
   .site-header {
@@ -1657,6 +1731,10 @@ letter-spacing: 4px;
     padding-right: 1rem;
   }
 
+  .hero-section {
+    padding-top: 2.4rem;
+  }
+
   .top-contact-inner {
     grid-template-columns: 1fr;
     gap: 0;
@@ -1682,6 +1760,7 @@ letter-spacing: 4px;
 
   .mobile-brand strong {
     font-size: 1.5rem;
+    width: 300px;
     letter-spacing: 0.08em;
     text-shadow:
       0 1px 0 rgba(255, 255, 255, 0.55),
@@ -1910,7 +1989,7 @@ letter-spacing: 4px;
     font-size: 1.45rem;
     line-height: 1.08;
     letter-spacing: -0.04em;
-    margin-bottom: 1rem;
+    margin-bottom: 0.7rem;
   }
 
   .hero-text,
@@ -1920,12 +1999,33 @@ letter-spacing: 4px;
   .contact-panel p,
   .footer-text {
     text-align: justify;
-    line-height: 1.78;
+    line-height: 1.56;
   }
 
   .eyebrow,
   .section-tag {
     line-height: 1.45;
+  }
+
+  .hero-actions,
+  .hero-meta {
+    margin-top: 1rem;
+  }
+
+  .stats-grid {
+    margin-top: 1.9rem;
+  }
+
+  .section-heading {
+    margin-bottom: 1.9rem;
+  }
+
+  .feature-grid {
+    margin-top: 1.4rem;
+  }
+
+  .contact-form-grid {
+    margin-top: 1rem;
   }
 
   .services-carousel {

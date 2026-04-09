@@ -37,10 +37,16 @@ const Footer = ({ navItems, scrollToSection }) => {
           <div className="footer-contact-block">
             <h4>Contact</h4>
             <div className="footer-contact-list">
-              <a href="tel:+918807329654" className="footer-contact-link">
+              <div className="footer-phone-row">
                 <i className="bi bi-telephone-fill" />
-                <span>+91 88073 29654 (or) 82204 51927</span>
-              </a>
+                <a href="tel:+918807329654" className="footer-contact-link footer-phone-link">
+                  <span>+91 88073 29654</span>
+                </a>
+                <span className="footer-phone-separator">(or)</span>
+                <a href="tel:+918220451927" className="footer-contact-link footer-phone-link">
+                  <span>82204 51927</span>
+                </a>
+              </div>
               <a
                 href="https://wa.me/918807329654"
                 target="_blank"

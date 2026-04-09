@@ -16,8 +16,8 @@ const aboutFeatures = [
   },
   {
     icon: "bi-phone-fill",
-    title: "Growth-Focused Approach",
-    text: "With digital marketing and data analytics, we help you reach the right audience and make smarter decisions.",
+    title: "AI-Driven Growth Strategy",
+    text: "Leverage intelligent automation and data insights to reach the right audience and accelerate smarter business decisionss.",
   },
 ];
 

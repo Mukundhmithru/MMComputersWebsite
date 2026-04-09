@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react";
+
 const reviewItems = [
   {
     name: "Rahul Kumar",
@@ -37,6 +39,59 @@ const reviewItems = [
 ];
 
 const ReviewsSection = () => {
+  const trackRef = useRef(null);
+  const pausedRef = useRef(false);
+
+  useEffect(() => {
+    let frameId = 0;
+    let offset = 0;
+    let lastTime = 0;
+
+    const animate = (time) => {
+      const track = trackRef.current;
+
+      if (!track) {
+        frameId = window.requestAnimationFrame(animate);
+        return;
+      }
+
+      const halfWidth = track.scrollWidth / 2;
+
+      if (!lastTime) {
+        lastTime = time;
+      }
+
+      if (!pausedRef.current && halfWidth > 0) {
+        const delta = (time - lastTime) / 1000;
+        const speed = window.innerWidth < 768 ? 65 : 28;
+        offset = (offset + speed * delta) % halfWidth;
+        track.style.transform = `translate3d(-${offset}px, 0, 0)`;
+      }
+
+      lastTime = time;
+      frameId = window.requestAnimationFrame(animate);
+    };
+
+    const syncTrackPosition = () => {
+      lastTime = 0;
+      if (trackRef.current) {
+        const halfWidth = trackRef.current.scrollWidth / 2;
+        if (halfWidth > 0) {
+          offset %= halfWidth;
+          trackRef.current.style.transform = `translate3d(-${offset}px, 0, 0)`;
+        }
+      }
+    };
+
+    frameId = window.requestAnimationFrame(animate);
+    window.addEventListener("resize", syncTrackPosition);
+
+    return () => {
+      window.cancelAnimationFrame(frameId);
+      window.removeEventListener("resize", syncTrackPosition);
+    };
+  }, []);
+
   return (
     <section id="reviews" className="section-shell reviews-section">
       <div className="container">
@@ -48,8 +103,16 @@ const ReviewsSection = () => {
           </p>
         </div>
 
-        <div className="review-marquee">
-          <div className="review-track review-track-a">
+        <div
+          className="review-marquee"
+          onMouseEnter={() => {
+            pausedRef.current = true;
+          }}
+          onMouseLeave={() => {
+            pausedRef.current = false;
+          }}
+        >
+          <div ref={trackRef} className="review-track">
             {[...reviewItems, ...reviewItems].map((item, index) => (
               <article key={`${item.name}-${index}`} className="review-card">
                 <p className="review-copy">{item.text}</p>
