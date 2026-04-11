@@ -17,7 +17,7 @@ const aboutFeatures = [
   {
     icon: "bi-phone-fill",
     title: "AI-Driven Growth Strategy",
-    text: "Leverage intelligent automation and data insights to reach the right audience and accelerate smarter business decisionss.",
+    text: "Leverage intelligent automation and data insights to reach the right audience and accelerate smarter business decisions.",
   },
 ];
 

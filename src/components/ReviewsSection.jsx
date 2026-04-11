@@ -41,6 +41,13 @@ const reviewItems = [
 const ReviewsSection = () => {
   const trackRef = useRef(null);
   const pausedRef = useRef(false);
+  const setPausedState = (isPaused, pointerType) => {
+    if (pointerType && pointerType !== "mouse") {
+      return;
+    }
+
+    pausedRef.current = isPaused;
+  };
 
   useEffect(() => {
     let frameId = 0;
@@ -105,12 +112,10 @@ const ReviewsSection = () => {
 
         <div
           className="review-marquee"
-          onMouseEnter={() => {
-            pausedRef.current = true;
-          }}
-          onMouseLeave={() => {
-            pausedRef.current = false;
-          }}
+          onMouseEnter={() => setPausedState(true)}
+          onMouseLeave={() => setPausedState(false)}
+          onPointerEnter={(event) => setPausedState(true, event.pointerType)}
+          onPointerLeave={(event) => setPausedState(false, event.pointerType)}
         >
           <div ref={trackRef} className="review-track">
             {[...reviewItems, ...reviewItems].map((item, index) => (
